@@ -1,10 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
 $(document).ready(function () {
   const escape = (str) => {
     let div = document.createElement('div');
@@ -13,21 +6,18 @@ $(document).ready(function () {
   };
 
   const createTweetElement = (tweet) => {
-    // let nameP = $('<p class="username">').text(tweet.user.name)
-
     return `<article class="tweet-article">
       <header class="article-head">
-      <div class="user-avatar">
-        <img src="${tweet.user.avatars}"></img> 
+        <div class="user-avatar">
+          <img src="${tweet.user.avatars}"></img> 
           <p class="username">${escape(tweet.user.name)}</p>
-      </div>
-          <p class="email">${escape(tweet.user.handle)}</p>
-
-    </header>
+        </div>
+        <p class="email">${escape(tweet.user.handle)}</p>
+      </header>
       <p class="content">${escape(tweet.content.text)}</p>
-        <footer class="article-foot">
-          <span>${tweet.created_at}</span>
-        <span>Like 💙 </span>
+      <footer class="article-foot">
+        <span>${tweet.created_at}</span>
+        <span>🚩🔁💙 </span>
       </footer>
   </article> `;
 
@@ -80,13 +70,13 @@ $(document).ready(function () {
     }
     let form = $(this);
     let url = form.attr('action');
-
     $.ajax({
       method: "POST",
       url: url,
       data: form.serialize(),
       success: function () {
         loadTweets();
+        $('#counter').text(140);
         $('#tweet-form').trigger("reset");
       }
     });
