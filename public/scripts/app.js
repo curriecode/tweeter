@@ -6,16 +6,23 @@
 
 
 $(document).ready(function () {
+  // $("<div>").text(textFromUser);
+  const escape = (str) => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = (tweet) => {
+    // let nameP = $('<p class="username">').text(tweet.user.name)
     return `<article class="tweet-article">
       <header class="article-head">
         <i class="fa fa-smile-o" aria-hidden="true"></i>
-          <p class="username">${tweet.user.name}</p>
-            <p class="email">${tweet.user.handle}</p>
+          <p class="username">${escape(tweet.user.name)}</p>
+            <p class="email">${escape(tweet.user.handle)}</p>
 
     </header>
-      <p class="content">${tweet.content.text}</p>
+      <p class="content">${escape(tweet.content.text)}</p>
         <footer class="article-foot">
           <span>2 Days ago</span>
         <span>Like 💙 </span>
@@ -23,6 +30,18 @@ $(document).ready(function () {
   </article> `;
 
   };
+
+  $(".btn").click(() => {
+    $('html, body').animate({
+      scrollTop: '475px'
+    }, 1000);
+    $('#text-input').focus()
+  });
+
+  $('.modal-button').click(() => {
+    $('.modal').removeClass('modal-visible');
+    $('.to-grey').removeClass('grey-screen');
+  });
 
 
   const renderTweets = function (tweets) {
@@ -47,12 +66,15 @@ $(document).ready(function () {
   $("#tweet-form").submit(function (e) {
     e.preventDefault();
     if ($('#text-input').val().trim().length === 0 && $('#text-input').val() !== null) {
-      alert("no characters have been entered");
+      $('.modal-text').text('Please enter text to create a tweet.');
+      $('.modal').addClass('modal-visible');
+      $('.to-grey').addClass('grey-screen');
       return;
-      //TODO fix - should not post of it's all empty spaces
     }
     if ($('#text-input').val().length > 140) {
-      alert("message has exceeded max character limit");
+      $('.modal-text').text('Maxium character length has been exceeded');
+      $('.modal').addClass('modal-visible');
+      $('.to-grey').addClass('grey-screen');
       return;
     }
     let form = $(this);

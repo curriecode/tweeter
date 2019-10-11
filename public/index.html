@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,6 +19,7 @@
   <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="./styles/header.css" type="text/css" />
   <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/modal.css" type="text/css">
 
   <!-- External JS -->
   <script type="text/javascript" src="./vendor/jquery-2.2.3.min.js"></script>
@@ -28,15 +31,19 @@
 <body>
 
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav class="to-grey">
+
     <span class="logo">tweeter</span>
-    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
 
-    <span class="new"><b>Write</b> a new tweet</span>
+    <div class="write-tweet">
 
+      <span class="new"><b>Write</b> a new tweet</span>
+      <button class="btn"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+
+    </div>
   </nav>
 
-  <header class="header">
+  <header class="header to-grey">
     <img class="stars" src="https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_960_720.jpg">
 
     <div class="avatar">
@@ -54,41 +61,23 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2 class="compose">Compose Tweet</h2>
-      <form id="tweet-form" method="POST" action="tweets">
+      <div class="modal">
+        <header class="modal-header">
+          Oops An Error Has Occurred
+        </header>
+        <p class="modal-text">doing a trying again</p>
+        <button class="modal-button">OK</button>
+      </div>
+      <h2 class="compose to-grey">Compose Tweet</h2>
+      <form class="to-grey" id="tweet-form" method="POST" action="tweets">
         <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
         <input class="tweet-button" type="submit" value="Tweet">
         <span id="counter" class="counter">140</span>
       </form>
     </section>
 
-    <section class="article">
-      <!-- <article class="tweet-article">
-        <header class="article-head">
-          <i class="fa fa-smile-o" aria-hidden="true"></i>
-          <p class="username">username</p>
-          <p class="email">user@email</p>
+    <section class="article to-grey">
 
-        </header>
-        <p class="content">This is where content goes</p>
-        <footer class="article-foot">
-          <span>2 Days ago</span>
-          <span>Like 💙 </span>
-        </footer>
-      </article> -->
-      <!-- <article class="tweet-article">
-        <header class="article-head">
-          <i class="fa fa-smile-o" aria-hidden="true"></i>
-          <p class="username">username</p>
-          <p class="email">user@email</p>
-
-        </header>
-        <p class="content">This is where content goes</p>
-        <footer class="article-foot">
-          <span>2 Days ago</span>
-          <span>Like 💙 </span>
-        </footer>
-      </article> -->
     </section>
 
   </main>
