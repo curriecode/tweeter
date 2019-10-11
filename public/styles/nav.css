@@ -15,8 +15,7 @@
   color: #d76ff6;
   cursor: pointer;
   background: none;
-  border: none;
-  
+  border: none; 
 }
 
 .btn:focus {
@@ -42,7 +41,6 @@
   }
  }
 
-
 nav {
   background-color: rgb(80, 80, 175);
   height: 120px;
@@ -63,8 +61,6 @@ div.write-tweet {
 
 
 /* TODO 
-- take out dead code and lint all files
 - readme
 - stretch.. get nav to slide in and out for smaller viewports
-- bug: counter doesn't reset after tweet is posted
 */ 

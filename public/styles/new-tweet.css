@@ -14,7 +14,6 @@ textarea {
   justify-content: left; 
   margin-left: 5%;
   margin-top: 5px;
-  /* margin: none; */
   border-radius: 0.2em;
   background-color: rgb(80, 80, 175);
   color: white;
@@ -53,7 +52,6 @@ header.article-head {
   font-size: 18px;
   padding: 1%;
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
   margin-right: 5%;
 }
@@ -61,6 +59,7 @@ header.article-head {
 i.fa-smile-o {
   font-size: 50px;
 }
+
 p.username {
   padding-left: 5px;
 }
@@ -70,7 +69,7 @@ p.username {
   flex-direction: row;
 }
 
-p.content{
+p.content {
   margin-left: 2%;
   font-weight: bold;
   font-size: 20px;

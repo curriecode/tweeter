@@ -3,22 +3,17 @@
   display: flex;
   flex-direction: column;
 }
+
 .header .stars {
   width: 100%;
-  /* position: relative; */
-  /* top: 5em; */
-  /* background-color: blueviolet; */
 }
+
 img.avatar {
   opacity: 0.5;
   margin-bottom: 3%;
-  /* height: auto; */
-  /* width: 20%; */
-  /* display: flex; */
 }
 
 .avatar {
-/* position: absolute; */
 position: relative;
 top: -7em;
 display: flex;
@@ -26,9 +21,8 @@ align-items: center;
 justify-content: center;
 color:rgb(223, 200, 223);
 text-shadow: 2px 0 black;
-
-/* z-index: 2; */
 }
+
 .compose {
   opacity: 0.5;
 }

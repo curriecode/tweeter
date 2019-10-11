@@ -36,12 +36,10 @@
   body {
     display: flex;
     flex-direction: row;
-    /* padding-top: 5em; */
   }
   main {
     top: 15em;
     margin-right: 5%;
-    /* margin-left: 5%; */
   }
   header.header {
     position: relative;
@@ -52,5 +50,4 @@
     padding-top: 15px;
     padding-right: 15px;
   }
-
 }
