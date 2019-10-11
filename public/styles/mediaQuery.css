@@ -1,0 +1,56 @@
+@media all and (max-width: 1024px) {
+  nav {
+    background-color: transparent;
+    top: 0.5em;
+    font-size: 40px;
+  }
+  .logo {
+    font-size: 30px;
+    padding-bottom: 40px;
+  }
+  header {
+    margin: none;
+  }
+  .header .stars {
+    height: 400px;
+
+  }
+
+  div.avatar {
+    height: 10%;
+  }
+
+  main.container {
+    top: -5em;
+  }
+ 
+}
+
+@media all and (min-width: 1025px) and (max-width: 1360px) {
+  img.avatar {
+    margin-top: 9%;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    /* padding-top: 5em; */
+  }
+  main {
+    top: 15em;
+    margin-right: 5%;
+    /* margin-left: 5%; */
+  }
+  header.header {
+    position: relative;
+    top: 10em;
+    margin-left: 5%;
+  }
+  div.write-tweet {
+    padding-top: 15px;
+    padding-right: 15px;
+  }
+
+}

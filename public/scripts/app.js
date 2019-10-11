@@ -6,7 +6,6 @@
 
 
 $(document).ready(function () {
-  // $("<div>").text(textFromUser);
   const escape = (str) => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -15,16 +14,19 @@ $(document).ready(function () {
 
   const createTweetElement = (tweet) => {
     // let nameP = $('<p class="username">').text(tweet.user.name)
+
     return `<article class="tweet-article">
       <header class="article-head">
-        <i class="fa fa-smile-o" aria-hidden="true"></i>
+      <div class="user-avatar">
+        <img src="${tweet.user.avatars}"></img> 
           <p class="username">${escape(tweet.user.name)}</p>
-            <p class="email">${escape(tweet.user.handle)}</p>
+      </div>
+          <p class="email">${escape(tweet.user.handle)}</p>
 
     </header>
       <p class="content">${escape(tweet.content.text)}</p>
         <footer class="article-foot">
-          <span>2 Days ago</span>
+          <span>${tweet.created_at}</span>
         <span>Like 💙 </span>
       </footer>
   </article> `;
@@ -33,9 +35,9 @@ $(document).ready(function () {
 
   $(".btn").click(() => {
     $('html, body').animate({
-      scrollTop: '475px'
+      scrollTop: $('.compose').offset().top - 60
     }, 1000);
-    $('#text-input').focus()
+    $('#text-input').focus();
   });
 
   $('.modal-button').click(() => {
@@ -45,9 +47,9 @@ $(document).ready(function () {
 
 
   const renderTweets = function (tweets) {
+    $('.tweet-article').remove();
     for (let tweet of tweets) {
       let $newTweet = createTweetElement(tweet);
-      // console.log($newTweet)
       $('.article').prepend($newTweet);
     }
   };
@@ -60,13 +62,12 @@ $(document).ready(function () {
         renderTweets(tweetData);
       });
   };
-  // loadTweets();
 
 
   $("#tweet-form").submit(function (e) {
     e.preventDefault();
     if ($('#text-input').val().trim().length === 0 && $('#text-input').val() !== null) {
-      $('.modal-text').text('Please enter text to create a tweet.');
+      $('.modal-text').text('Please enter text to create a tweet');
       $('.modal').addClass('modal-visible');
       $('.to-grey').addClass('grey-screen');
       return;
@@ -92,5 +93,3 @@ $(document).ready(function () {
   });
   loadTweets();
 });
-//TODO - clears out text input after submit
-//TODO - dynamically update date /profile pics

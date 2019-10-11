@@ -1,11 +1,11 @@
 .modal {
-position: absolute;
 z-index: 5;
+position: absolute;
 border: solid rgb(141, 127, 108);
-top: 20em;
-left: 4em;
-width: 65%;
-height: 18%;
+display: flex;
+flex-direction: column;
+align-items: center;
+/* top: 5em; */
 background-color: rgb(172, 200, 235);
 font-family: 'Bungee', cursive, sans-serif;
 border-radius: 4px;
@@ -14,34 +14,27 @@ visibility: hidden;
 
 .modal-header {
   padding-top: 3%;
-  /* padding-left: 17%; */
   padding-bottom: 3%;
   border-bottom: solid;
-  text-align: center;
-  /* background-color: antiquewhite; */
-
 }
 button.modal-button {
-  position: relative;
   width: 25%;
-  height: 15%;
-  bottom: -1em;
-  left: 9.5em;
+  margin-bottom: 5px;
   border-radius: 7px;
   cursor: pointer;
   outline: 0;
-  box-shadow: 3px, 3px lightgrey;  
-
 }
 p.modal-text {
+  padding-left: 3px;
+  padding-right: 3px;
   text-align: center;
 }
 
 .modal-visible {
   visibility: visible;
+  opacity: 1;
 }
 
 .grey-screen {
   -webkit-filter: blur(4px) grayscale(50%);
-  /* -webkit-transform: scale(0.9); */
 }

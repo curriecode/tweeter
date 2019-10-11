@@ -12,10 +12,11 @@
 
 .btn {
   font-size: 35px;
-  color: #f3ccff;
+  color: #d76ff6;
   cursor: pointer;
   background: none;
   border: none;
+  
 }
 
 .btn:focus {
@@ -23,8 +24,23 @@
 }
 
 .btn:hover {
-  color: #bc6bd4;
+  color: #a04cb9;
 }
+
+.btn.bounce {
+  animation: bounce 3s infinite;
+ }
+ @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+ }
 
 
 nav {
@@ -46,42 +62,9 @@ div.write-tweet {
 }
 
 
-
-/* @media all and (max-width: 790px) {
- body {
-
-  }
-} */
-
-
-@media all and (max-width: 1024px) {
-  nav {
-    background-color: transparent;
-    top: 0.5em;
-    font-size: 40px;
-  }
-  .logo {
-    font-size: 30px;
-  }
-  header {
-    margin: none;
-    /* margin-top: -15%; */
-  }
-  .header .stars {
-    height: 400px;
-
-  }
-
-  div.avatar {
-    height: 10%;
-  }
-
-  main.container {
-    top: -5em;
-  }
- 
-}
-
-@media all and (min-width: 1025) {
-  
-}
+/* TODO 
+- take out dead code and lint all files
+- readme
+- stretch.. get nav to slide in and out for smaller viewports
+- bug: counter doesn't reset after tweet is posted
+*/ 

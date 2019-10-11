@@ -29,3 +29,6 @@ text-shadow: 2px 0 black;
 
 /* z-index: 2; */
 }
+.compose {
+  opacity: 0.5;
+}
