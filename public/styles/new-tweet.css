@@ -7,6 +7,17 @@ textarea {
   border-top: 10px;
   background-color: #f3ccff;
 }
+section.new-tweet {
+  display: none;
+}
+section.article.pre-click{
+  margin-top: -9em;
+}
+
+
+/* section.new-tweet.slide {
+  visibility: visible;
+} */
 
 .tweet-button {
   font-family: 'Bungee', cursive, sans-serif;

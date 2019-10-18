@@ -29,6 +29,9 @@ Tweeter is a single-page application Twitter clone. It is designed to be fully r
 
 - Express
 - Node 5.10.x or above
+- chance ^1.0.2
+- body-parser ^1.15.2
+- md5 ^2.1.0
 
 ## Contributions
 Backend starter code was served by [Lighthouse Labs](https://github.com/lighthouse-labs/tweeter)
