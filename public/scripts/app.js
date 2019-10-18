@@ -77,7 +77,7 @@ $(document).ready(function () {
     // checks if characters in text box are over limit
     // if they are it triggers the error modal
     if ($('#text-input').val().length > 140) {
-      $('.modal-text').text('Maxium character length has been exceeded');
+      $('.modal-text').text('Maximum character length has been exceeded');
       $('.modal').addClass('modal-visible');
       $('.to-grey').addClass('grey-screen');
       return;
