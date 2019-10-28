@@ -28,11 +28,8 @@ $(document).ready(function () {
 
   //toggles and slides page to text field when compose button is clicked
   $(".btn").click(() => {
-    $('html, body').animate({
-      scrollTop: $('.compose').offset().top - 60
-    }, 1000);
-    $('.new-tweet').slideDown('slow');
-    $('.article').removeClass('pre-click');
+    $('.new-tweet').toggleClass('show');
+    $('.article').toggleClass('pre-click');
     $('#text-input').focus();
   });
 

@@ -7,8 +7,9 @@ textarea {
   border-top: 10px;
   background-color: #f3ccff;
 }
-section.new-tweet {
-  display: none;
+
+.show {
+  visibility: hidden;
 }
 section.article.pre-click{
   margin-top: -9em;
